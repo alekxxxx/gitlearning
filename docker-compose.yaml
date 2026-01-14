@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  my-web-server:
+      - nginx:latest
+      - mariadb
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./:/var/lib/mysql
+    restart: always
